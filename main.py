@@ -19,7 +19,7 @@ def get_initial_data() -> list:
                 if not isinstance(task, tuple) or len(task) != 2 or not all(isinstance(val, int) for val in task):
                     raise ValueError
             jobs_data.append(job)
-        except (ValueError, SyntaxError):
+        except ValueError:
             print("Неверный ввод. Пожалуйста введите данные по форме: [(номер станка, время выполнения),(номер станка, время выполнения),...]. Например: [(0, 3), (1, 2), (2, 2)]")
 
     print("\nДанные введены.")
@@ -130,7 +130,7 @@ def main() -> None:
                 if not isinstance(task, tuple) or len(task) != 2 or not all(isinstance(val, int) for val in task):
                     raise ValueError
             jobs_data.append(new_job)
-        except (ValueError, SyntaxError):
+        except ValueError:
             print("Неверный ввод. Пожалуйста введите данные по форме: [(номер станка, время выполнения),(номер станка, время выполнения),...]. Например: [(0, 3), (1, 2), (2, 2)]")
 
     print("Работа завершена.")
